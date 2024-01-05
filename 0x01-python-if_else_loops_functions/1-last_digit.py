@@ -8,5 +8,5 @@ if last_digit > 5:
 elif last_digit == 0:
     print("last digit of {} is {} and is 0".format(number, last_digit))
 else:
-    print("last digit of"}
+    print("last digit of")
     print(" {} is {} and is less than  and not 0".format(number, last_digit))
