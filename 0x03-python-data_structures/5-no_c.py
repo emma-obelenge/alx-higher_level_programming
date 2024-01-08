@@ -1,9 +1,6 @@
 #!/usr/bin/env python3
 def no_c(my_string):
-    new_string = ""
-    for char in my_string:
-        if char == 'C' or char == 'c':
-            continue
-        else:
-            new_string += char
-    return (new_string)
+    remove = "cC"
+    for char in remove:
+        my_string = my_string.replace(char, "")
+    return (my_string)
