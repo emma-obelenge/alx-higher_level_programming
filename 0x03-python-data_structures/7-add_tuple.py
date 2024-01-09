@@ -2,7 +2,7 @@
 def add_tuple(tuple_a=(), tuple_b=()):
     len1 = len(tuple_a)
     len2 = len(tuple_b)
-    if tuple_a == False or tuple_b == False:
+    if tuple_a is False or tuple_b is False:
         print()
     elif len1 == 0 and len2 == 0:
         print()
