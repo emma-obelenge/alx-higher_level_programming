@@ -41,6 +41,7 @@ class Square:
             returns the square of the size attribute
         """
         return (self.__size ** 2)
+
     def my_print(self):
         """my_print method prints the square '#' to stdou"""
         if (self.__size == 0):
