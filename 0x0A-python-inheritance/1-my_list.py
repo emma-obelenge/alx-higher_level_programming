@@ -3,11 +3,12 @@
 
 
 class MyList(list):
-    """MyList inherits from lists
+    """
+    MyList inherits from lists
 
-        Methods:
-            print_sorted (self): sorts the list
+    Methods:
+        print_sorted (self): sorts the the built-in list
     """
     def print_sorted(self):
-        """would sort the list"""
+        """would print the list in ascending order"""
         print(sorted(self))
