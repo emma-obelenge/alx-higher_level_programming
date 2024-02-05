@@ -13,10 +13,9 @@ def inherits_from(obj, a_class):
             obj (any): The object to be checked.
             a_class (type): The class for check comparism.
         Returns:
-            True if obj is an instance of a_class.
-            and False if the reverse is the case.
+            if obj is an instance of a_class - True
+            and False if the reverse is the case - False
     """
     if (issubclass(type(obj), a_class) and type(obj)) != a_class:
         return (True)
-    else:
-        return (False)
+    return (False)
