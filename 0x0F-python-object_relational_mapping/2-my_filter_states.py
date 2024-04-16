@@ -8,15 +8,21 @@ from sys import argv
 
 
 if __name__ == "__main__":
-    db = MySQLdb.connect(host="localhost", port=3306,
-                         user=argv[1], passwd=argv[2], db=argv[3])
-    cur = db.cursor()
-    sql = "SELECT * FROM states WHERE name='{:s}'\
-    ORDER BY states.id".format(argv[4])
-    cur.execute(sql)
-    rows = cur.fetchall()
+    db = MySQLdb.connect(
+        host="localhost",
+        port=3306,
+        user=argv[1],
+        passwd=argv[2],
+        db=argv[3]
+    )
+
+    cursor = db.cursor()
+    sql_cmd = "SELECT * FROM states WHERE name='{:s}'\
+        ORDER BY states.id".format(argv[4])
+    cursor.execute(sql_cmd)
+    rows = cursor.fetchall()
     for row in rows:
-        if row[1] == argv[4]:
-            print(row)
-    cur.close()
+        # if row[1] == argv[4]:
+        print(row)
+    cursor.close()
     db.close()
