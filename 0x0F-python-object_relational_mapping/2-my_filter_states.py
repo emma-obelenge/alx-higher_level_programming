@@ -21,7 +21,10 @@ if __name__ == "__main__":
         ORDER BY states.id".format(argv[4])
     cursor.execute(sql_cmd)
     rows = cursor.fetchall()
-    for row in rows:
+    if rows == None:
+        pass
+    else:
+        for row in rows:
         # if row[1] == argv[4]:
         print(row)
     cursor.close()
