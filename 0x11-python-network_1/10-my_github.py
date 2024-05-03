@@ -15,8 +15,9 @@ def searchapi():
     try:
         data = result.json()
         print(data["id"])
-    except:
+    except Exception:
         print("None")
+
 
 if __name__ == "__main__":
     searchapi()
