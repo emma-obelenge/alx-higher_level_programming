@@ -4,16 +4,24 @@ import requests
 import sys
 
 
-def errorcode():
+def searchapi():
     """status"""
-    result = requests.get(sys.argv[1])
+    if len(sys.argv) == 1:
+        q = ""
+    else:
+        q = sys.argv[1]
+
+    result = requests.post("http://0.0.0.0:5000/search_user", data={"q": q})
+
     try:
-        if result.status_code > 400:
-            print("Error code: {}".format(result.status_code))
+        data = result.json()
+        if data:
+            print("[{}] {}".format(data["id"], data["name"]))
         else:
-            print(result.content.decode("utf-8"))
-    except KeyError:
-        pass
+            print("No result")
+    except:
+        print("Not a valid JSON")
+
 
 if __name__ == "__main__":
-    errorcode()
+    searchapi()
