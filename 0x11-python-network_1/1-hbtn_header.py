@@ -1,12 +1,14 @@
 #!/usr/bin/python3
-"""
-fetches https://alx-intranet.hbtn.io/status
-"""
+"""Fetches header"""
+import urllib.request
+import sys
+
+
+def fetcher():
+    """fetcher"""
+    with urllib.request.urlopen(sys.argv[1]) as response:
+        header = response.info()
+        print(header["X-Request-Id"])
+
 if __name__ == "__main__":
-    import urllib.request as request
-    with request.urlopen('https://alx-intranet.hbtn.io/status') as r:
-        html = r.read()
-        print('Body response:')
-        print("\t- type: {}".format(type(html)))
-        print("\t- content: {}".format(html))
-        print("\t- utf8 content: {}".format(html.decode('utf-8')))
+    fetcher()
