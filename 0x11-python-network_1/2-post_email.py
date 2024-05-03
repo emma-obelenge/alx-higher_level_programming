@@ -1,22 +1,19 @@
 #!/usr/bin/python3
-"""Check status"""
-import requests
-from requests.auth import HTTPBasicAuth
+"""Send POST"""
+import urllib.request
+import urllib.parse
 import sys
 
 
-def searchapi():
-    """status"""
-    user = str(sys.argv[1])
-    pw = str(sys.argv[2])
-    result = requests.get("https://api.github.com/user",
-                          auth=(HTTPBasicAuth(user, pw)))
-
-    try:
-        data = result.json()
-        print(data["id"])
-    except:
-        print("None")
+def sender():
+    """sender"""
+    v = {"email": sys.argv[2]}
+    data = urllib.parse.urlencode(v)
+    data = data.encode("ascii")
+    req = urllib.request.Request(sys.argv[1], data)
+    with urllib.request.urlopen(req) as response:
+        html = response.read()
+        print(html.decode("utf-8"))
 
 if __name__ == "__main__":
-    searchapi()
+    sender()
