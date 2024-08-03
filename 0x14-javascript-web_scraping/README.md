@@ -1,7 +1,8 @@
 ALX PROJECT - 0x14. JavaScript - Web scraping
 
 NOTE: These scripts are inline with semistandard code style
-[![js-semistandard-style](https://raw.githubusercontent.com/standard/semistandard/master/badge.svg)](https://github.com/standard/semistandard)
+
+.[![js-semistandard-style](https://raw.githubusercontent.com/standard/semistandard/master/badge.svg)](https://github.com/standard/semistandard)
 
 weight : 1
 Learning Objectives
